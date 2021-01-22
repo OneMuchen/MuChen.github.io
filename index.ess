@@ -1,0 +1,94 @@
+* {
+	/* 椤甸潰鍒濆鍖� 娓呴櫎椤甸潰鍏冪礌鍘熸湁鐨勫唴澶栬竟璺� */
+	padding: 0;
+	margin: 0;
+}
+body {
+	height: 100vh;
+	/* 鑳屾櫙娓愬彉鑹� */
+	background: linear-gradient(#99f, #f99);
+}
+body,
+.navbar,
+.navbar ul {
+	/* 涓変釜鍏冪礌閮介渶瑕佸脊鎬у竷灞€ 鍐欎竴鍧� */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.navbar {
+	/* 鐩稿瀹氫綅 */
+	position: relative;
+	padding: 20px;
+	border-radius: 50px;
+	background-color: #fff;
+}
+.navbar input {
+	width: 40px;
+	height: 40px;
+	/* 榧犳爣绉诲叆鍙樺皬鎵� */
+	cursor: pointer;
+	/* 涓嶉€忔槑搴︿负0 鐩存帴鍙橀€忔槑 */
+	opacity: 0;
+}
+.navbar span {
+	/* 缁濆瀹氫綅 */
+	position: absolute;
+	left: 25px;
+	/* 鐜板皢涓ゆ潯绾块兘鏀惧埌涓€璧� 鐒跺悗鍗曠嫭璁剧疆绗簩鏉＄嚎鐨勪綅缃� calc鏂规硶鍙互鑷姩璁＄畻鏁板€� */
+	top: calc(50% - 10px);
+	width: 30px;
+	height: 4px;
+	border-radius: 15px;
+	background-color: #999;
+	/* 杩欓噷鍦ㄨВ鍐充竴涓棶棰� 鐜板湪span瑕嗙洊鐫€澶嶉€夋 鎴戜滑榧犳爣鏀惧埌span鐐逛笉涓閫夋  鍐欒繖涓睘鎬у氨鑳借В鍐宠繖涓棶棰� 鍗充究榧犳爣鏀惧埌span涓婄偣鍑讳篃鑳藉閫変腑鎴栬€呮湭閫変腑澶嶉€夋*/
+	pointer-events: none;
+	/* 鏀跺洖鏉ョ殑鏃跺€欒繃娓″垰濂界浉鍙� */
+	transition: transform 0.3s ease-in-out, top 0.3s ease-in-out 0.3s;
+}
+/* 鍥犱负绗簩鏉＄嚎鍦╪avbar杩欎釜鍏冪礌鍐呯殑绗笁涓綅缃� 鎵€浠ヨ繖閲屽啓3 */
+.navbar span:nth-child(3) {
+	top: calc(50% + 6px);
+}
+.navbar ul {
+	width: 0;
+	/* 婧㈠嚭闅愯棌 */
+	overflow: hidden;
+	/* 鐜板湪杩欎釜鐩掑瓙鏄墎鐨� 寰呬細瑙ｅ喅杩欎釜闂 */
+	/* 杩欎釜闂鍑虹幇鐨勫師鍥犳槸 鏂囧瓧琚崲琛屾樉绀轰簡 涓や釜姹夊瓧绔栫潃鎺掑垪浜� 灏辨拺澶х洅瀛愪簡 */
+	/* 杩欎釜灞炴€у彲浠ヨ鏂囧瓧灏卞湪涓€琛屾帓鍒� 涓嶆崲琛� */
+	white-space: nowrap;
+	transition: all 0.5s;
+}
+.navbar ul li {
+	list-style: none;
+	margin: 0 15px;
+}
+.navbar ul li a {
+	/* 鍙栨秷涓嬪垝绾� */
+	text-decoration: none;
+	font-size: 20px;
+	font-weight: 700;
+	color: #333;
+}
+.navbar ul li a:hover {
+	color: #fb7299;
+}
+/* :checked鏄綋閫変腑鐨勫閫夋鐨勬椂鍊� ~ 鏄厔寮熼€夋嫨鍣� 鏌ユ壘鍚屼竴绾х殑ul */
+.navbar input:checked ~ ul {
+	width: 350px;
+}
+.navbar input:checked ~ span:nth-child(2) {
+	top: calc(50% - 2px);
+	transform: rotate(-45deg);
+	background-color: #fb7299;
+	/* 鐜板湪閫熷害澶揩浜� 鍔犱釜杩囨浮 */
+	/* 杩欐槸鍏堟墽琛宼op 鐒跺悗.3s鍚庢墽琛宼ransform */
+	transition: top 0.3s ease-in-out, transform 0.3s ease-in-out 0.3s;
+}
+.navbar input:checked ~ span:nth-child(3) {
+	top: calc(50% - 2px);
+	transform: rotate(45deg);
+	background-color: #fb7299;
+	transition: top 0.3s ease-in-out, transform 0.3s ease-in-out 0.3s;
+}
